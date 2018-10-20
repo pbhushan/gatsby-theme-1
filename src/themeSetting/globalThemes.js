@@ -1,6 +1,6 @@
 module.exports = {
   bg: {
-    default: 'transparent',
+    default: '#C2D3DA',
     neutral: '#C2D3DA',
     primary: '#81A3A7',
     secondary: '#585A56',

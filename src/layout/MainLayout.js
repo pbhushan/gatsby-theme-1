@@ -52,6 +52,14 @@ injectGlobal`
     justify-content: space-between;
     align-items: center;
   } 
+
+  a{
+    color: ${selectedTheme.bg.secondary};
+    text-decoration: none;
+    text-shadow: none;
+    background-image: none;
+    background-color: transparent;
+  }
 `
 
 export default Layout

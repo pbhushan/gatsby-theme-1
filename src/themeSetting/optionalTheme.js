@@ -1,5 +1,5 @@
 module.exports = {
-  header_height: 60,
+  header_height: '60px',
   between: {
     from: '300',
     to: '1800',

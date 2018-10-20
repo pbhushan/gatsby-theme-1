@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Seo from '../seo'
+import Seo from '../SEO'
 import PropTypes from 'prop-types'
 import VisibilitySensor from 'react-visibility-sensor'
 import styled from 'styled-components'
@@ -10,7 +10,7 @@ import HeaderInner from './HeaderInner'
 const optionalTheme = require('../../themeSetting/optionalTheme')
 
 const HeaderWrapper = styled.header`
-  height: ${optionalTheme.header_height + 'px'};
+  height: ${optionalTheme.header_height};
   background: ${props => props.theme.bg.neutral};
   color: ${props => props.theme.text.neutral};
   transition: ${optionalTheme.header_scrollY ? 'transform' : 'all'}
@@ -31,10 +31,6 @@ const HeaderWrapper = styled.header`
     color: ${props => props.theme.text.neutral};
     background: ${props =>
       darken(optionalTheme.shades, props.theme.bg.neutral)};
-  }
-
-  @media ${device.tablet} {
-    height: ${optionalTheme.header_height * optionalTheme.scale + 'px'};
   }
 `
 
@@ -106,7 +102,10 @@ class Header extends Component {
           className={this.getHeaderClasses()}
           visibility={this.state.isVisible ? 'visible' : 'invisible'}
         >
-          <HeaderInner />
+          <HeaderInner
+            visibility={this.state.isVisible ? 'visible' : 'invisible'}
+            {...this.props}
+          />
         </HeaderWrapper>
       </React.Fragment>
     )
